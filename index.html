@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kaikysocial.github.io/">
 <meta name="theme-color" content="#0E0C0A">
+<script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},2500)</script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,11 +43,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1rem;text-decoration:none;border-radius:999px;padding:15px 26px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s;white-space:nowrap}
 .btn-gold{background:var(--gold);color:var(--gold-ink)}
-.btn-gold:hover{background:var(--gold-hi)}
+@media (hover:hover){.btn-gold:hover{background:var(--gold-hi)}}
 .btn-dark{background:var(--gold-ink);color:var(--bone)}
-.btn-dark:hover{background:#000}
+@media (hover:hover){.btn-dark:hover{background:#000}}
 .btn-line{border-color:#4A4235;color:var(--bone);background:transparent}
-.btn-line:hover{border-color:var(--gold)}
+@media (hover:hover){.btn-line:hover{border-color:var(--gold)}}
 .btn svg{width:18px;height:18px;flex:none}
 .textlink{color:var(--bone);font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:6px;text-decoration-thickness:1px}
 .textlink:hover{color:var(--gold-hi)}
@@ -159,7 +160,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
   .feed .tile:nth-child(6) > div,.feed .tile:nth-child(8) > div{transition-delay:.21s}
   .feed .tile:nth-child(9) > div{transition-delay:.28s}
 }
-.feed.after ~ * .avatar,.phone.after .avatar{background:conic-gradient(#F0DDA6,#C9A45C,#8E6B2C,#C9A45C,#F0DDA6)}
+.phone.after .avatar{background:conic-gradient(#F0DDA6,#C9A45C,#8E6B2C,#C9A45C,#F0DDA6)}
 .phone.after .avatar i{background:var(--ink);color:var(--gold)}
 
 /* sections */
@@ -173,7 +174,7 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.8vw,3.7rem)
 .rows{border-top:1px solid var(--line)}
 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) 12em;gap:16px 48px;align-items:baseline;padding-block:30px;border-bottom:1px solid var(--line);position:relative}
 .row::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--gold);transition:width .5s cubic-bezier(.2,.7,.2,1)}
-.row:hover::after{width:100%}
+@media (hover:hover){.row:hover::after{width:100%}}
 .row h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.05;letter-spacing:-.01em}
 .row p{color:#CFC6B8}
 .row .p{font-weight:700;color:var(--gold);white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
@@ -232,6 +233,9 @@ summary .pm::before,summary .pm::after{content:"";position:absolute;left:0;top:6
 summary .pm::after{transform:rotate(90deg)}
 details[open] summary .pm::after{transform:rotate(0)}
 details p{color:#CFC6B8;padding-bottom:22px;max-width:36em}
+details[open] p{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+[id]{scroll-margin-top:90px}
 
 /* contact */
 .contact{padding-bottom:40px}
@@ -257,7 +261,7 @@ footer{padding-block:60px 110px;overflow:hidden}
 /* nichos */
 .nichos{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
 .nichos button{font:inherit;font-size:.86rem;font-weight:700;color:var(--smoke);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
-.nichos button:hover{color:var(--bone);border-color:#4A4235}
+@media (hover:hover){.nichos button:hover{color:var(--bone);border-color:#4A4235}}
 .nichos button[aria-pressed="true"]{color:var(--gold-ink);background:var(--gold);border-color:var(--gold)}
 .phone [data-k]{transition:opacity .25s}
 .phone.swap [data-k]{opacity:0}
@@ -275,7 +279,8 @@ footer{padding-block:60px 110px;overflow:hidden}
 .q h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:24px}
 .qopts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .qopts button{font:inherit;font-weight:700;font-size:1rem;text-align:left;color:var(--bone);background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:18px 20px;cursor:pointer;transition:border-color .2s,background .2s}
-.qopts button:hover{border-color:var(--gold)}
+@media (hover:hover){.qopts button:hover{border-color:var(--gold)}}
+.qopts button:active{background:var(--ink-3)}
 .qopts button small{display:block;font-weight:500;color:var(--smoke);font-size:.85rem;margin-top:2px}
 .qback{font:inherit;font-size:.9rem;font-weight:600;color:var(--smoke);background:none;border:0;padding:0;margin-top:18px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .q{animation:qin .4s cubic-bezier(.2,.7,.2,1)}
@@ -339,7 +344,7 @@ footer{padding-block:60px 110px;overflow:hidden}
   .plan{padding:26px 22px}
   .combo{padding:22px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -581,14 +586,19 @@ footer{padding-block:60px 110px;overflow:hidden}
 
 <script>
 (function(){
-  var d=document.documentElement;d.classList.add('js');
+  var d=document.documentElement;
   var feed=document.getElementById('feed'),phone=document.getElementById('phone'),bA=document.getElementById('bAntes'),bD=document.getElementById('bDepois'),touched=false;
   function set(after){feed.classList.toggle('after',after);phone.classList.toggle('after',after);bA.setAttribute('aria-pressed',String(!after));bD.setAttribute('aria-pressed',String(after));}
-  bA.addEventListener('click',function(){touched=true;set(false)});
-  bD.addEventListener('click',function(){touched=true;set(true)});
+  var timers=[],pend=null;function limpa(){timers.forEach(clearTimeout);timers=[];if(pend){var f=pend;pend=null;f()}}
+  bA.addEventListener('click',function(){touched=true;limpa();phone.classList.remove('swap');set(false)});
+  bD.addEventListener('click',function(){touched=true;limpa();phone.classList.remove('swap');set(true)});
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('ready')})});
-  if(reduce){set(true)}else{setTimeout(function(){if(!touched)set(true)},2100)}
+  function virar(){if(!touched)set(true)}
+  if(reduce){set(true)}
+  else if('IntersectionObserver' in window&&window.innerWidth<961){
+    var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();timers.push(setTimeout(virar,700))}},{threshold:.55});io.observe(phone);
+  }else{timers.push(setTimeout(virar,2100))}
 
   /* nichos */
   var NICHOS={
@@ -599,10 +609,12 @@ footer{padding-block:60px 110px;overflow:hidden}
   };
   var nb=document.querySelectorAll('.nichos button');
   nb.forEach(function(b){b.addEventListener('click',function(){
-    touched=true;var n=NICHOS[b.dataset.n];nb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    touched=true;limpa();var n=NICHOS[b.dataset.n];nb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    function troca(){pend=null;phone.querySelectorAll('[data-k]').forEach(function(el){var v=n[el.dataset.k];if(v!=null)el.textContent=v});phone.classList.remove('swap')}
+    if(reduce){troca();set(true);return}
     set(false);phone.classList.add('swap');
-    setTimeout(function(){phone.querySelectorAll('[data-k]').forEach(function(el){var v=n[el.dataset.k];if(v!=null)el.textContent=v});phone.classList.remove('swap')},260);
-    setTimeout(function(){set(true)},reduce?0:1100);
+    pend=troca;timers.push(setTimeout(troca,260));
+    timers.push(setTimeout(function(){set(true)},1100));
   })});
 
   /* diagnóstico */
