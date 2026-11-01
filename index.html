@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap">
 <style>
 :root{
   --ink:#0E0C0A;--ink-2:#16130F;--ink-3:#1E1A15;--line:#2B261F;
@@ -253,6 +253,68 @@ footer{padding-block:60px 110px;overflow:hidden}
 .mbar.show{transform:none}
 .mbar .btn{width:100%;box-shadow:0 18px 40px -12px rgba(0,0,0,.8)}
 
+
+/* nichos */
+.nichos{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.nichos button{font:inherit;font-size:.86rem;font-weight:700;color:var(--smoke);background:transparent;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.nichos button:hover{color:var(--bone);border-color:#4A4235}
+.nichos button[aria-pressed="true"]{color:var(--gold-ink);background:var(--gold);border-color:var(--gold)}
+.phone [data-k]{transition:opacity .25s}
+.phone.swap [data-k]{opacity:0}
+
+/* quiz */
+.quizsec{padding-top:0}
+.quizwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px 70px;align-items:start}
+.quizwrap > *{min-width:0}
+.quizintro{display:flex;flex-direction:column;gap:18px;position:sticky;top:110px}
+.quizintro p{color:var(--smoke);max-width:30em}
+.quiz{background:var(--ink-2);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4vw,40px);min-height:330px;display:flex;flex-direction:column;gap:26px}
+.qtop{display:flex;align-items:center;gap:16px;font-size:.88rem;color:var(--smoke);font-weight:600}
+.qbar{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden;border-radius:2px}
+.qbar i{position:absolute;left:0;top:0;bottom:0;background:var(--gold);transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.q h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:24px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qopts button{font:inherit;font-weight:700;font-size:1rem;text-align:left;color:var(--bone);background:var(--ink);border:1px solid var(--line);border-radius:16px;padding:18px 20px;cursor:pointer;transition:border-color .2s,background .2s}
+.qopts button:hover{border-color:var(--gold)}
+.qopts button small{display:block;font-weight:500;color:var(--smoke);font-size:.85rem;margin-top:2px}
+.qback{font:inherit;font-size:.9rem;font-weight:600;color:var(--smoke);background:none;border:0;padding:0;margin-top:18px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.q{animation:qin .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes qin{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.res h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.1;margin-bottom:8px}
+.res > p{color:#CFC6B8;margin-bottom:18px}
+.recs{list-style:none;margin:0 0 24px;padding:0;border-top:1px solid var(--line)}
+.recs li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding-block:14px;border-bottom:1px solid var(--line)}
+.recs li div{min-width:0}
+.recs li b{display:block;font-weight:700}
+.recs li span{color:var(--smoke);font-size:.92rem}
+.recs li em{font-style:normal;font-weight:700;color:var(--gold);white-space:nowrap}
+.resact{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center}
+
+/* about */
+.aboutwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px 80px;align-items:center}
+.aboutwrap > *{min-width:0}
+.portrait{aspect-ratio:4/5;border-radius:28px;background:radial-gradient(circle at 30% 20%,#2a2319,#0E0C0A 70%);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative;overflow:hidden}
+.portrait::after{content:"";position:absolute;inset:14px;border:1px solid #2B261F;border-radius:20px;pointer-events:none}
+.portrait svg{width:46%;height:auto;aspect-ratio:1}
+.portrait span{font-size:.85rem;color:var(--smoke);font-weight:600}
+.abouttext{display:flex;flex-direction:column;gap:18px}
+.abouttext h2{margin-bottom:6px}
+.abouttext p{color:#CFC6B8;max-width:36em;font-size:1.05rem}
+.sign{font-family:"Caveat",cursive;font-size:3.2rem;line-height:1;color:var(--gold);transform:rotate(-4deg);transform-origin:left;margin-top:6px;display:inline-block}
+
+/* status */
+.status-line{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--smoke);margin-bottom:14px}
+.status-line i{width:9px;height:9px;border-radius:50%;background:#6a5f4e;flex:none}
+.status-line.on i{background:#5BBF6A;box-shadow:0 0 0 4px rgba(91,191,106,.15)}
+.status-line.on{color:var(--bone)}
+
+@media (max-width:960px){
+  .quizwrap,.aboutwrap{grid-template-columns:1fr}
+  .quizintro{position:static}
+  .portrait{max-width:340px;width:100%}
+}
+@media (max-width:560px){.qopts{grid-template-columns:1fr}.recs li{flex-direction:column;gap:4px}}
+
 @media (max-width:960px){
   .hero{grid-template-columns:1fr}
   .stage{order:2}
@@ -324,26 +386,32 @@ footer{padding-block:60px 110px;overflow:hidden}
   </div>
 
   <div class="stage" aria-label="Exemplo de perfil antes e depois">
+    <div class="nichos" role="group" aria-label="Escolha o tipo de negócio">
+      <button type="button" data-n="barbearia" aria-pressed="true">Barbearia</button>
+      <button type="button" data-n="salao" aria-pressed="false">Salão</button>
+      <button type="button" data-n="estetica" aria-pressed="false">Estética</button>
+      <button type="button" data-n="unhas" aria-pressed="false">Unhas</button>
+    </div>
     <div class="phone" id="phone">
       <div class="screen">
         <span class="island" aria-hidden="true"></span>
         <div class="status" aria-hidden="true"><span>9:41</span><span>5G</span></div>
-        <div class="ig-head" aria-hidden="true"><span>barbeariaexemplo</span><span>☰</span></div>
+        <div class="ig-head" aria-hidden="true"><span data-k="handle">barbeariaexemplo</span><span>☰</span></div>
         <div class="profile" aria-hidden="true">
-          <span class="avatar"><i>B</i></span>
-          <div class="bio"><b>Barbearia Exemplo</b><span class="a">corte e barba</span><span class="d">Méier, Rio. Agende pelo link abaixo.</span></div>
+          <span class="avatar"><i data-k="av">B</i></span>
+          <div class="bio"><b data-k="nome">Barbearia Exemplo</b><span class="a" data-k="bioA">corte e barba</span><span class="d" data-k="bioD">Méier, Rio. Agende pelo link abaixo.</span></div>
         </div>
-        <div class="hl" aria-hidden="true"><span><i>✂</i><b class="x">Cortes</b></span><span><i>R$</i><b class="x">Preços</b></span><span><i>◷</i><b class="x">Agenda</b></span><span><i>⌖</i><b class="x">Local</b></span></div>
+        <div class="hl" aria-hidden="true"><span><i>✂</i><b class="x" data-k="hl1">Cortes</b></span><span><i>R$</i><b class="x">Preços</b></span><span><i>◷</i><b class="x">Agenda</b></span><span><i>⌖</i><b class="x">Local</b></span></div>
         <div class="feed" id="feed" aria-hidden="true">
-          <div class="tile"><div class="a a1">foto escura</div><div class="d d1"><span class="s">Agenda aberta</span><small>sábado, a partir das 9h</small></div></div>
-          <div class="tile"><div class="a a2"></div><div class="d d2"><span class="s">Degradê</span></div></div>
+          <div class="tile"><div class="a a1">foto escura</div><div class="d d1"><span class="s" data-k="t1">Agenda aberta</span><small data-k="t1b">sábado, a partir das 9h</small></div></div>
+          <div class="tile"><div class="a a2"></div><div class="d d2"><span class="s" data-k="t2">Degradê</span></div></div>
           <div class="tile"><div class="a a3">bom dia!!</div><div class="d d3"><small>antes</small><small>depois</small></div></div>
-          <div class="tile"><div class="a a4">sem legenda</div><div class="d d4"><span class="s">Horário marcado, sem fila.</span></div></div>
-          <div class="tile"><div class="a a5"></div><div class="d d5"><small>Bastidores</small></div></div>
-          <div class="tile"><div class="a a6">foto tremida</div><div class="d d6"><span class="s">3 cuidados com a barba</span><span class="dots"><i></i><i></i><i></i></span></div></div>
+          <div class="tile"><div class="a a4">sem legenda</div><div class="d d4"><span class="s" data-k="t4">Horário marcado, sem fila.</span></div></div>
+          <div class="tile"><div class="a a5"></div><div class="d d5"><small data-k="t5">Bastidores</small></div></div>
+          <div class="tile"><div class="a a6">foto tremida</div><div class="d d6"><span class="s" data-k="t6">3 cuidados com a barba</span><span class="dots"><i></i><i></i><i></i></span></div></div>
           <div class="tile"><div class="a a7">PROMO!!!</div><div class="d d7"><small>Reels</small></div></div>
           <div class="tile"><div class="a a8"></div><div class="d d8"><small>Como chegar</small></div></div>
-          <div class="tile"><div class="a a9">print</div><div class="d d9"><span class="s">Chama no WhatsApp</span></div></div>
+          <div class="tile"><div class="a a9">print</div><div class="d d9"><span class="s" data-k="t9">Chama no WhatsApp</span></div></div>
         </div>
         <div class="tabbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
       </div>
@@ -352,7 +420,7 @@ footer{padding-block:60px 110px;overflow:hidden}
       <button type="button" id="bAntes" aria-pressed="true">Antes</button>
       <button type="button" id="bDepois" aria-pressed="false">Depois</button>
     </div>
-    <p class="caption">Exemplo ilustrativo com uma barbearia fictícia. É assim que eu organizo o perfil dos meus clientes.</p>
+    <p class="caption">Exemplo ilustrativo com um negócio fictício. Escolha o seu tipo de negócio aí em cima pra ver como ficaria.</p>
   </div>
 </div>
 
@@ -367,6 +435,19 @@ footer{padding-block:60px 110px;overflow:hidden}
       <div class="row"><h3>WhatsApp automático</h3><p>Responde quem chama fora do horário, mostra seus serviços e preços, agenda e manda lembrete pro cliente não faltar.</p><span class="p">R$ 300 + R$ 80/mês</span></div>
       <div class="row"><h3>Google Maps</h3><p>Seu perfil no Google completo, com fotos boas, horário certo e resposta para cada avaliação.</p><span class="p">R$ 150 + R$ 60/mês</span></div>
       <div class="row"><h3>Site</h3><p>Uma página sua com serviços, preços, fotos, mapa e botão de WhatsApp. Pronto em até 7 dias.</p><span class="p">R$ 900</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="diagnostico" class="quizsec">
+  <div class="wrap quizwrap">
+    <div class="quizintro">
+      <h2>O que o seu negócio precisa?</h2>
+      <p>Responda 4 perguntas rápidas e veja qual plano faz sentido pra você. Se quiser, o resultado vai direto pro meu WhatsApp e eu te respondo com uma análise do seu perfil.</p>
+    </div>
+    <div class="quiz" id="quiz" aria-live="polite">
+      <div class="qtop"><span id="qcount">Pergunta 1 de 4</span><span class="qbar"><i id="qbar"></i></span></div>
+      <div id="qbody"></div>
     </div>
   </div>
 </section>
@@ -441,6 +522,22 @@ footer{padding-block:60px 110px;overflow:hidden}
   </div>
 </section>
 
+<section id="quem-sou" class="about">
+  <div class="wrap aboutwrap">
+    <div class="portrait" aria-hidden="true">
+      <svg><use href="#mark"/></svg>
+      <span>Rio de Janeiro</span>
+    </div>
+    <div class="abouttext">
+      <h2>Quem cuida do seu perfil</h2>
+      <p>Eu sou o Kaiky. Moro no Rio e cuido pessoalmente de cada negócio que atendo. Não tem atendente, não tem robô respondendo por mim: quem fala com você no WhatsApp, monta seus posts e te manda o relatório sou eu.</p>
+      <p>Comecei a Kaiky Social porque vejo muito negócio de bairro com trabalho excelente e um Instagram que não mostra nada disso. Meu trabalho é fazer o seu perfil estar à altura do que você entrega.</p>
+      <p>Atendo poucos negócios ao mesmo tempo, pra conseguir dar atenção de verdade a cada um.</p>
+      <span class="sign">Kaiky</span>
+    </div>
+  </div>
+</section>
+
 <section id="duvidas">
   <div class="wrap faq">
     <h2>Dúvidas</h2>
@@ -461,6 +558,7 @@ footer{padding-block:60px 110px;overflow:hidden}
       <p class="lead">Me chama no WhatsApp com o nome do seu negócio. Eu respondo em horário comercial e já te mando o diagnóstico, sem custo.</p>
     </div>
     <div>
+      <p class="status-line" id="aberto"><i></i><span>Horário de atendimento</span></p>
       <p class="num" id="num">(21) 98663-7152</p>
       <div class="actions">
         <a class="btn btn-gold" href="https://wa.me/5521986637152?text=Ol%C3%A1%2C%20vi%20seu%20site%20e%20quero%20uma%20proposta" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Abrir o WhatsApp</a>
@@ -491,6 +589,67 @@ footer{padding-block:60px 110px;overflow:hidden}
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('ready')})});
   if(reduce){set(true)}else{setTimeout(function(){if(!touched)set(true)},2100)}
+
+  /* nichos */
+  var NICHOS={
+    barbearia:{handle:"barbeariaexemplo",av:"B",nome:"Barbearia Exemplo",bioA:"corte e barba",bioD:"Méier, Rio. Agende pelo link abaixo.",hl1:"Cortes",t1:"Agenda aberta",t1b:"sábado, a partir das 9h",t2:"Degradê",t4:"Horário marcado, sem fila.",t5:"Bastidores",t6:"3 cuidados com a barba",t9:"Chama no WhatsApp"},
+    salao:{handle:"salaoexemplo",av:"S",nome:"Salão Exemplo",bioA:"cabelo e beleza",bioD:"Tijuca, Rio. Agende pelo link abaixo.",hl1:"Cabelo",t1:"Agenda aberta",t1b:"sexta e sábado",t2:"Mechas",t4:"Seu cabelo, do seu jeito.",t5:"Bastidores",t6:"Como manter a cor por mais tempo",t9:"Chama no WhatsApp"},
+    estetica:{handle:"esteticaexemplo",av:"E",nome:"Estética Exemplo",bioA:"estética facial e corporal",bioD:"Botafogo, Rio. Agende sua avaliação.",hl1:"Tratam.",t1:"Horários da semana",t1b:"de segunda a sábado",t2:"Limpeza de pele",t4:"Cuidado que aparece.",t5:"Procedimento",t6:"Cuidados depois do procedimento",t9:"Agende sua avaliação"},
+    unhas:{handle:"esmalteriaexemplo",av:"U",nome:"Esmalteria Exemplo",bioA:"unhas e cutilagem",bioD:"Copacabana, Rio. Agende pelo link.",hl1:"Unhas",t1:"Agenda aberta",t1b:"quinta a sábado",t2:"Nail art",t4:"Unha feita, semana leve.",t5:"Bastidores",t6:"Cores da estação",t9:"Chama no WhatsApp"}
+  };
+  var nb=document.querySelectorAll('.nichos button');
+  nb.forEach(function(b){b.addEventListener('click',function(){
+    touched=true;var n=NICHOS[b.dataset.n];nb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    set(false);phone.classList.add('swap');
+    setTimeout(function(){phone.querySelectorAll('[data-k]').forEach(function(el){var v=n[el.dataset.k];if(v!=null)el.textContent=v});phone.classList.remove('swap')},260);
+    setTimeout(function(){set(true)},reduce?0:1100);
+  })});
+
+  /* diagnóstico */
+  var PERG=[
+    {k:"ig",t:"Seu negócio já tem Instagram?",o:[["sim","Sim","tenho um perfil"],["nao","Não","ainda não tenho"]]},
+    {k:"posta",t:"Você posta pelo menos 2 vezes por semana?",o:[["sim","Sim","quase sempre"],["nao","Não","posto pouco ou nunca"]]},
+    {k:"zap",t:"Muita gente chama no WhatsApp perguntando preço e horário?",o:[["sim","Sim","o dia todo"],["nao","Não","é tranquilo"]]},
+    {k:"google",t:"Seu negócio aparece no Google Maps com fotos boas e avaliações respondidas?",o:[["sim","Sim","está tudo certo"],["nao","Não","ou não sei"]]}
+  ];
+  var R={},qi=0,body=document.getElementById('qbody'),qc=document.getElementById('qcount'),qb=document.getElementById('qbar');
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function pergunta(){
+    var p=PERG[qi];qc.textContent='Pergunta '+(qi+1)+' de '+PERG.length;qb.style.width=(qi/PERG.length*100)+'%';
+    var w=el('div','q');w.appendChild(el('h3',null,p.t));var g=el('div','qopts');
+    p.o.forEach(function(o){var b=el('button');b.type='button';b.appendChild(document.createTextNode(o[1]));b.appendChild(el('small',null,o[2]));b.addEventListener('click',function(){R[p.k]=o[0];qi++;qi<PERG.length?pergunta():resultado()});g.appendChild(b)});
+    w.appendChild(g);
+    if(qi>0){var bk=el('button','qback','Voltar');bk.type='button';bk.addEventListener('click',function(){qi--;pergunta()});w.appendChild(bk)}
+    body.replaceChildren(w);
+  }
+  function resultado(){
+    qc.textContent='Seu resultado';qb.style.width='100%';
+    var recs=[];
+    if(R.ig==='nao')recs.push(['Kit Perfil Pronto','Crio seu perfil do zero, com bio, destaques e link de agendamento.','R$ 197']);
+    if(R.ig==='nao'||R.posta==='nao')recs.push(['Instagram Essencial','8 posts por mês pra seu perfil nunca mais ficar parado.','R$ 350/mês']);
+    if(R.ig==='sim'&&R.posta==='sim')recs.push(['Instagram Completo','Você já posta. Com Reels, stories e relatório, o perfil passa a trazer cliente.','R$ 500/mês']);
+    if(R.zap==='sim')recs.push(['WhatsApp automático','Responde preço e horário sozinho e agenda pra você, até de madrugada.','R$ 300 + R$ 80/mês']);
+    if(R.google==='nao')recs.push(['Google Maps','Quem procura no Google te encontra com fotos boas e avaliações respondidas.','R$ 150 + R$ 60/mês']);
+    var w=el('div','q res');
+    w.appendChild(el('h3',null,'O que eu faria no seu lugar'));
+    w.appendChild(el('p',null,'Comece pela amostra grátis de 3 posts. Se gostar, a gente segue com isso aqui:'));
+    var ul=el('ul','recs');recs.forEach(function(r){var li=el('li');var d=el('div');d.appendChild(el('b',null,r[0]));d.appendChild(el('span',null,r[1]));li.appendChild(d);li.appendChild(el('em',null,r[2]));ul.appendChild(li)});w.appendChild(ul);
+    var resp=PERG.map(function(p){return '- '+p.t+' '+(R[p.k]==='sim'?'Sim':'Não')}).join('\n');
+    var txt='Olá, Kaiky! Fiz o diagnóstico no seu site:\n'+resp+'\n\nSugestão: '+recs.map(function(r){return r[0]}).join(', ')+'.\nQuero conversar e ver a amostra grátis.';
+    var act=el('div','resact');var a=el('a','btn btn-gold','Mandar meu resultado');a.href='https://wa.me/5521986637152?text='+encodeURIComponent(txt);a.target='_blank';a.rel='noopener';act.appendChild(a);
+    var again=el('button','qback','Refazer');again.type='button';again.style.marginTop='0';again.addEventListener('click',function(){R={};qi=0;pergunta()});act.appendChild(again);
+    w.appendChild(act);body.replaceChildren(w);
+  }
+  pergunta();
+
+  /* horário de atendimento (horário do Rio) */
+  try{
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Sao_Paulo',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+    var wd=parts.find(function(x){return x.type==='weekday'}).value,hr=parseInt(parts.find(function(x){return x.type==='hour'}).value,10)%24;
+    var aberto=wd!=='Sun'&&hr>=9&&hr<19,st=document.getElementById('aberto');
+    st.classList.toggle('on',aberto);st.querySelector('span').textContent=aberto?'Atendendo agora. Respondo no mesmo dia.':'Fora do horário. Respondo a partir das 9h.';
+  }catch(e){}
+
   var top=document.getElementById('top'),mbar=document.getElementById('mbar'),contato=document.getElementById('contato');
   function onScroll(){var y=window.scrollY;top.classList.toggle('scrolled',y>10);var c=contato.getBoundingClientRect().top<window.innerHeight;mbar.classList.toggle('show',y>500&&!c)}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
