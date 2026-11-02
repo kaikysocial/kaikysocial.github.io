@@ -305,7 +305,10 @@ footer{padding-block:60px 110px;overflow:hidden}
 .abouttext{display:flex;flex-direction:column;gap:18px}
 .abouttext h2{margin-bottom:6px}
 .abouttext p{color:#CFC6B8;max-width:36em;font-size:1.05rem}
-.sign{font-family:"Caveat",cursive;font-size:3.2rem;line-height:1;color:var(--gold);transform:rotate(-4deg);transform-origin:left;margin-top:6px;display:inline-block}
+.sign{font-family:"Caveat",cursive;font-size:3.2rem;line-height:1;color:var(--gold);transform:rotate(-4deg);transform-origin:left;margin-top:6px;display:inline-block;align-self:flex-start}
+.signwrap{display:block;align-self:flex-start}
+.js .sign{clip-path:inset(-30% 108% -40% -8%);transition:clip-path 1.7s cubic-bezier(.6,.05,.35,1) .25s}
+.js .sign.write{clip-path:inset(-30% -8% -40% -8%)}
 
 /* status */
 .status-line{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--smoke);margin-bottom:14px}
@@ -538,7 +541,7 @@ footer{padding-block:60px 110px;overflow:hidden}
       <p>Eu sou o Kaiky. Moro no Rio e cuido pessoalmente de cada negócio que atendo. Não tem atendente, não tem robô respondendo por mim: quem fala com você no WhatsApp, monta seus posts e te manda o relatório sou eu.</p>
       <p>Comecei a Kaiky Social porque vejo muito negócio de bairro com trabalho excelente e um Instagram que não mostra nada disso. Meu trabalho é fazer o seu perfil estar à altura do que você entrega.</p>
       <p>Atendo poucos negócios ao mesmo tempo, pra conseguir dar atenção de verdade a cada um.</p>
-      <span class="sign">Kaiky</span>
+      <span class="signwrap"><span class="sign">Kaiky</span></span>
     </div>
   </div>
 </section>
@@ -653,6 +656,10 @@ footer{padding-block:60px 110px;overflow:hidden}
     w.appendChild(act);body.replaceChildren(w);
   }
   pergunta();
+
+  /* assinatura se escrevendo */
+  var sg=document.querySelector('.sign');
+  if(sg){if(reduce||!('IntersectionObserver' in window)){sg.classList.add('write')}else{var so=new IntersectionObserver(function(es){if(es[0].isIntersecting){so.disconnect();sg.classList.add('write')}},{threshold:1,rootMargin:'0px 0px -12% 0px'});so.observe(sg.parentNode)}}
 
   /* horário de atendimento (horário do Rio) */
   try{
