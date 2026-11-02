@@ -659,7 +659,7 @@ footer{padding-block:60px 110px;overflow:hidden}
 
   /* assinatura se escrevendo */
   var sg=document.querySelector('.sign');
-  if(sg){if(reduce||!('IntersectionObserver' in window)){sg.classList.add('write')}else{var so=new IntersectionObserver(function(es){if(es[0].isIntersecting){so.disconnect();sg.classList.add('write')}},{threshold:1,rootMargin:'0px 0px -12% 0px'});so.observe(sg.parentNode)}}
+  if(sg){if(reduce||!('IntersectionObserver' in window)){sg.classList.add('write')}else{var so=new IntersectionObserver(function(es){if(es[0].isIntersecting){so.disconnect();sg.classList.add('write')}},{threshold:.5,rootMargin:'0px 0px -10% 0px'});so.observe(sg.parentNode)}}
 
   /* horário de atendimento (horário do Rio) */
   try{
